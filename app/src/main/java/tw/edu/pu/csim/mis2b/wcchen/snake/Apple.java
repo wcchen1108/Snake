@@ -15,6 +15,15 @@ public class Apple {
         this.y = y;
     }
 
+    public void draw(Canvas canvas){
+        canvas.drawBitmap(bm, x, y, null);
+    }
+
+    public void reset(int nx, int ny){
+        this.x = nx;
+        this.y = ny;
+    }
+
     public Bitmap getBm() {
         return bm;
     }
@@ -40,19 +49,10 @@ public class Apple {
     }
 
     public Rect getR() {
-        return new Rect(this.x, this.y, this.x+GameView.size0fMap, this.y+GameView.size0fMap);
+        return new Rect(this.x, this.y, this.x+GameView.sizeElementMap, this.y+GameView.sizeElementMap);
     }
 
     public void setR(Rect r) {
         this.r = r;
-    }
-
-    public void draw(Canvas canvas) {
-        canvas.drawBitmap(bm, x, y, null);
-    }
-
-    public void reset(int nx, int ny) {
-        this.x = nx;
-        this.y = ny;
     }
 }

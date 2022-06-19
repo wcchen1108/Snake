@@ -4,7 +4,12 @@ plugins {
 
 android {
     compileSdk 31
+    buildToolsVersion "30.0.3"
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
 
+    }
     defaultConfig {
         applicationId "tw.edu.pu.csim.mis2b.wcchen.snake"
         minSdk 21
@@ -13,6 +18,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            //設定支援的SO庫架構
+            abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
     }
 
     buildTypes {
